@@ -10,12 +10,14 @@ import UIKit
 
 class PhotosViewController: UIViewController {
 
-    var store: PhotoStore!
+//    var store: PhotoStore!
+    var controller: PhotosController = PhotosController()
     @IBOutlet private var imageView: UIImageView!
-
+    
+    //Call controller to fetch JSON
     override func viewDidLoad() {
         super.viewDidLoad()
-        store.fetchInterestingPhotos {
+        controller.fetchInterestingPhotos {
             (photosResult) in
             
             switch photosResult {
@@ -31,9 +33,9 @@ class PhotosViewController: UIViewController {
     }
     
     func updateImageView(for photo: Photo) {
-        store.fetchImage(for: photo) {
+        controller.fetchImage(for: photo) {
             (imageResult) in
-            
+
             switch imageResult {
             case let .success(image):
                 self.imageView.image = image

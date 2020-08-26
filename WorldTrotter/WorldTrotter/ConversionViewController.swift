@@ -20,7 +20,11 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var textField: UITextField!
     
     var fahrenheitValue: Measurement<UnitTemperature>? {
+        willSet {
+            print("newValue: \(String(describing: newValue)) \(String(describing: fahrenheitValue))")
+        }
         didSet {
+            print("oldValue: \(String(describing: oldValue))")
             updateCelsiusLabel()
         }
     }

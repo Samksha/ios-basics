@@ -1,8 +1,8 @@
 //
-//  FlickrAPI.swift
+//  PhotoSourceAPI.swift
 //  Photorama
 //
-//  Created by Samksha Bhardwaj on 18/08/20.
+//  Created by Samksha Bhardwaj on 26/08/20.
 //  Copyright © 2020 Samksha Bhardwaj. All rights reserved.
 //
 
@@ -12,11 +12,11 @@ enum EndPoint: String {
     case interestingPhotos = "flickr.interestingness.getList"
 }
 
-struct FlickrAPI {
-    private static let baseURLString = "https://api.flickr.com/services/rest"
-    private static let apiKey = "a6d819499131071f158fd740860a5a88"
+class PhotoSourceAPI {
+    private let baseURLString = "https://api.flickr.com/services/rest"
+    private let apiKey = "a6d819499131071f158fd740860a5a88"
     
-    private static func flickrURL(endPoint: EndPoint, parameters: [String:String]?) -> URL {
+    private func constructURL(endPoint: EndPoint, parameters: [String:String]?) -> URL {
         
         var components = URLComponents(string: baseURLString)!
         var queryItems = [URLQueryItem]()
@@ -44,11 +44,11 @@ struct FlickrAPI {
         return components.url!
     }
     
-    static var interestingPhotosURL: URL {
-        return flickrURL(endPoint: .interestingPhotos, parameters: ["extras":"url_z,date_taken"])
+    var interestingPhotosURL: URL {
+        return constructURL(endPoint: .interestingPhotos, parameters: ["extras":"url_z,date_taken"])
     }
     
-    static func photos(fromJSON data: Data) -> Result<[Photo], Error> {
+    func getPhotos(fromJSON data: Data) -> Result<[Photo], Error> {
         do {
             let decoder = JSONDecoder()
             
@@ -66,7 +66,8 @@ struct FlickrAPI {
         }
     }
     
-    struct FlickrPhotoResponse: Codable {
+    //To make decoding JSON a bit easier
+    class FlickrPhotoResponse: Codable {
         let photos: [Photo]
         
         enum CodingKeys: String, CodingKey {
@@ -74,7 +75,7 @@ struct FlickrAPI {
         }
     }
     
-    struct FlickrResponse: Codable {
+    class FlickrResponse: Codable {
         let photosInfo: FlickrPhotoResponse
         
         enum CodingKeys: String, CodingKey {
