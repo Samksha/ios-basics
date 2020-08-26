@@ -15,6 +15,8 @@
 		085CDCEB24E66418005B049B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 085CDCE924E66418005B049B /* LaunchScreen.storyboard */; };
 		085CDCF624E66418005B049B /* WorldTrotterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085CDCF524E66418005B049B /* WorldTrotterTests.swift */; };
 		085CDD0124E66418005B049B /* WorldTrotterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085CDD0024E66418005B049B /* WorldTrotterUITests.swift */; };
+		089972EA24F6435E00CC6945 /* ConversionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089972E924F6435E00CC6945 /* ConversionController.swift */; };
+		089972ED24F6523700CC6945 /* TemperatureStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089972EC24F6523700CC6945 /* TemperatureStore.swift */; };
 		08E87D1D24EA46AC00803B33 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E87D1C24EA46AC00803B33 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +52,8 @@
 		085CDCFC24E66418005B049B /* WorldTrotterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorldTrotterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		085CDD0024E66418005B049B /* WorldTrotterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldTrotterUITests.swift; sourceTree = "<group>"; };
 		085CDD0224E66418005B049B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		089972E924F6435E00CC6945 /* ConversionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionController.swift; sourceTree = "<group>"; };
+		089972EC24F6523700CC6945 /* TemperatureStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureStore.swift; sourceTree = "<group>"; };
 		08E87D1C24EA46AC00803B33 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,9 +105,9 @@
 		085CDCDD24E66417005B049B /* WorldTrotter */ = {
 			isa = PBXGroup;
 			children = (
+				089972EB24F651F800CC6945 /* Conversion */,
 				085CDCDE24E66417005B049B /* AppDelegate.swift */,
 				085CDCE024E66417005B049B /* SceneDelegate.swift */,
-				085CDCE224E66417005B049B /* ConversionViewController.swift */,
 				08E87D1C24EA46AC00803B33 /* MapViewController.swift */,
 				085CDCE424E66417005B049B /* Main.storyboard */,
 				085CDCE724E66418005B049B /* Assets.xcassets */,
@@ -129,6 +133,16 @@
 				085CDD0224E66418005B049B /* Info.plist */,
 			);
 			path = WorldTrotterUITests;
+			sourceTree = "<group>";
+		};
+		089972EB24F651F800CC6945 /* Conversion */ = {
+			isa = PBXGroup;
+			children = (
+				085CDCE224E66417005B049B /* ConversionViewController.swift */,
+				089972E924F6435E00CC6945 /* ConversionController.swift */,
+				089972EC24F6523700CC6945 /* TemperatureStore.swift */,
+			);
+			path = Conversion;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +278,8 @@
 			files = (
 				085CDCE324E66417005B049B /* ConversionViewController.swift in Sources */,
 				085CDCDF24E66417005B049B /* AppDelegate.swift in Sources */,
+				089972ED24F6523700CC6945 /* TemperatureStore.swift in Sources */,
+				089972EA24F6435E00CC6945 /* ConversionController.swift in Sources */,
 				085CDCE124E66417005B049B /* SceneDelegate.swift in Sources */,
 				08E87D1D24EA46AC00803B33 /* MapViewController.swift in Sources */,
 			);
