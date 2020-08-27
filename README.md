@@ -7,3 +7,5 @@ WorldTrotter - App to practise NavigationController and delegates. One screen sh
 LootLogger - App to practise TableViews and StackViews. Shows randomly generated items in a table format, allows insertion, deletion, and reordering.
 
 Buggy - App to practise Xcode debugging.
+
+Quiz - App to practise ViewControllers. Shows questions and answers.
